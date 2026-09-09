@@ -36,5 +36,6 @@ Para cada entidade, estas são as características ou propriedades que qualifica
 * **Uso_Peca (Entidade Associativa):** `ID_OS` (Chave Estrangeira/Identificador), `ID_Peca` (Chave Estrangeira/Identificador), `Quantidade_Utilizada` (Atributo Próprio da associação).
 
 ### 4. Diagrama Entidade e Relacionamento (DER)
+<br>
 
 ![Diagrama DER](diagrama_der.png)
