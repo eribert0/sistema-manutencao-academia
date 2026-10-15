@@ -6,7 +6,8 @@ Este projeto visa resolver um problema comum em academias: o controle ineficient
 O sistema automatiza esse fluxo, registrando desde o momento em que a falha é identificada até a conclusão do reparo técnico, permitindo à gestão acompanhar quais aparelhos dão mais problemas e o custo das manutenções.
 
 ## 2. Regras de Negócio e Processos
-1. **Identificação do Problema:** Qualquer funcionário ou professor da academia pode registrar um alerta de avaria informando o equipamento afetado.
-2. **Abertura de Ordem de Serviço (OS):** O gestor avalia o alerta, interdita o aparelho se necessário, e abre oficialmente uma Ordem de Serviço vinculada ao equipamento.
-3. **Execução Técnica:** Um técnico de manutenção é alocado para a OS. Durante o conserto, ele pode utilizar uma ou mais peças de reposição.
-4. **Fechamento:** Após o reparo, o técnico encerra a OS, o sistema atualiza o estoque de peças e o equipamento é liberado para uso novamente.
+1. **Identificação do problema:** Qualquer funcionário da academia (professor, recepcionista, gestor) que perceba uma falha em um equipamento, seja por observação própria ou por relato de um aluno, registra um **Alerta** no sistema, informando o equipamento afetado e descrevendo a falha.
+2. **Triagem do alerta:** O gestor analisa os alertas pendentes e decide se o problema exige intervenção técnica. Se o alerta for improcedente (ex.: aparelho apenas desregulado, alerta duplicado), ele é encerrado sem gerar OS. Se houver risco aos alunos, o gestor interdita o equipamento imediatamente.
+3. **Abertura da Ordem de Serviço (OS):** Para alertas procedentes, o gestor abre uma OS vinculada ao alerta que a originou e ao equipamento, registrando a data de abertura. Um mesmo equipamento pode ter vários alertas sobre a mesma falha, e todos eles podem ser atendidos por uma única OS.
+4. **Execução técnica:** A OS é atribuída a um técnico responsável. Durante o conserto, ele pode utilizar uma ou mais peças de reposição, registrando a quantidade de cada uma.
+5. **Fechamento:** Após o reparo, o técnico encerra a OS (data de fechamento). O sistema dá baixa no estoque das peças utilizadas, calcula o custo total da OS e o gestor libera o equipamento para uso.
